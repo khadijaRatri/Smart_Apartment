@@ -1,0 +1,8 @@
+<form method='POST'>
+    {% csrf_token %}
+    Payment ID: <input type="number" name="payment_id"><br>
+    Payment Amount: <input type="number" name="payment_amount"><br>
+    Payment Time: <input type="datetime-local" name="payment_time"><br>
+    Resident ID: <input type="number" name="resident_id"><br>
+    <input type="submit" value="Submit">
+</form>

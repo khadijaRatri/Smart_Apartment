@@ -1,0 +1,26 @@
+{% load static %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <h3>Payments List</h3>
+    <table class="table table-hover">
+        <thead class="table-info">
+            <tr>
+                <th>Payment ID</th>
+                <th>Payment Amount</th>
+                <th>Payment Time</th>
+                <th>Resident</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.payment_id }}</td>
+                <td>{{ payment.payment_amount }}</td>
+                <td>{{ payment.payment_time }}</td>
+                <td>{{ payment.resident }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+{% endblock %}

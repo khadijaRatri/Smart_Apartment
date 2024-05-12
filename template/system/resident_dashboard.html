@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header styling */
+        .header {
+            background-color: #FFB000;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+        }
+        .hello-msg {
+            color: #FFFFFF;
+        }
+        /* Menu styling */
+        .menu {
+            background-color: #004225;
+            color: #FFFFFF;
+            padding: 5px;
+            text-align: center;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .menu ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        /* Content styling */
+        .content {
+            margin: 10px;
+            padding: 10px;
+            background-color: #F5F5DC;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>Welcome to Resident Dashboard</h3>
+            <b><span class="hello-msg">Welcome, {{request.user}}</span></b><br>
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'service' %}"><i class="fas fa-wrench"></i>Service List</a></li>
+                <li><a href="{% url 'amenity' %}"><i class="fas fa-bath"></i>Amenity List</a></li>
+                <li><a href="{% url 'guestList' %}"><i class="fas fa-users"></i>Guest List</a></li>
+                <li><a href="{% url 'upload_complain' %}"><i class="fas fa-exclamation-triangle"></i>Submit Complaint</a></li>
+                <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>View Statement</a></li>
+                <li><a href="{% url 'payments_list' %}"><i class="fas fa-history"></i>Bill & Payment History</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="card">
+                <h3>Service Requests</h3>
+                <p>Description of Service Request</p>
+            </div>
+            <div class="card">
+                <h3>Amenity Requests</h3>
+                <p>Description of Amenity Request</p>
+            </div>
+            <div class="card">
+                <h3>Guest List</h3>
+                <p>List of Guests</p>
+            </div>
+            <div class="card">
+                <h3>Submit Complaint</h3>
+                <p>Description of Complaint</p>
+            </div>
+            <div class="card">
+                <h3>View Statement</h3>
+                <p>Statement Details</p>
+            </div>
+            <div class="card">
+                <h3>Bill & Payment History</h3>
+                <p>Payment History</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
